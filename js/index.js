@@ -7,9 +7,10 @@ console.log('navLinks', navLinks);
 
 navLinks.forEach((element) => element.addEventListener('mouseover', event =>{
     event.target.style.color = 'green';
-
+    event.target.style.fontSize = '2rem';
     setTimeout(function(){
         event.target.style.color = '';
+        event.target.style.fontSize = '';
     }, 500);
     event.preventDefault();
     
