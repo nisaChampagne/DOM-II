@@ -11,7 +11,7 @@ navLinks.forEach((element) => element.addEventListener('mouseover', event =>{
     setTimeout(function(){
         event.target.style.color = '';
         event.target.style.fontSize = '';
-    }, 500);
+    }, 1000);
     event.preventDefault();
     
 }, false));
@@ -76,8 +76,8 @@ document.addEventListener('dblclick', (event) => alert('You know you do not have
 
 const paragraphs = document.querySelectorAll('p');
 document.addEventListener('scroll', function() {
-    let colorchoice = "rgb(" + Math.round(Math.random() * 220) + "," + Math.round(Math.random() * 220) + "," + Math.round(Math.random() * 220) + ")";
-    paragraphs.forEach((para) => para.style.color = colorchoice)
+    let epilepsy = "rgb(" + Math.round(Math.random() * 200) + "," + Math.round(Math.random() * 200) + "," + Math.round(Math.random() * 200) + ")";
+    paragraphs.forEach((para) => para.style.color = epilepsy)
 })
 
 
