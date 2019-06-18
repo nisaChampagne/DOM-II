@@ -2,40 +2,58 @@
 
 //mouseover-- 1---nav a
 
-const navLinks = document.querySelector('a.nav-link');
+const navLinks = document.querySelectorAll('a.nav-link');
 console.log('navLinks', navLinks);
 
 
-navLinks.addEventListener('mouseover', event =>{
+navLinks.forEach((element) => element.addEventListener('mouseover', event =>{
     event.target.style.color = 'green';
-    event.target.style.backgroundColor = 'yellow';
 
     setTimeout(function(){
         event.target.style.color = '';
     }, 500);
-}, false);
+}, false));
 
 
 ////mouseout---2
 
-const secondaryHeader = document.querySelector('h2');
+const secondaryHeader = document.querySelectorAll('h2');
 console.log('secondaryHeader', secondaryHeader);
 
-secondaryHeader.addEventListener('mouseover', event =>{
+secondaryHeader.forEach((ele) => ele.addEventListener('mouseout', event =>{
     event.target.style.color = 'purple';
     
     setTimeout(function(){
         event.target.style.color = '';
-    }, 500);
-}, false);
+    }, 1000);
+}, false));
+
+secondaryHeader.forEach((ele) => ele.addEventListener('mouseover', event =>{
+    event.target.style.color = 'green';
+    
+    setTimeout(function(){
+        event.target.style.color = '';
+    }, 1000);
+}, false));
+
+
 
 ///click---3
+const buttons = document.querySelector('.btn');
+console.log('buttons', buttons);
 
-
+buttons.addEventListener('click', event =>{
+    buttons.innerHTML = `Click a bunch: ${event.detail}`;
+    event.target.style.color = 'purple';
+});
 
 ///resize---4
 
+window.addEventListener('resize', (event) => alert('Why are you in my swamp?!'));
+
 ///copy---5
+
+document.addEventListener('copy', (event) => alert('God is watching you plagiarize'));
 
 ///dragstart---6
 
