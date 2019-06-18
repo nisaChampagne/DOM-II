@@ -15,7 +15,9 @@ navLinks.forEach((element) => element.addEventListener('mouseover', event =>{
     
 }, false));
 
-
+navLinks.forEach((element) => element.addEventListener('click', event => {
+    event.preventDefault();
+}));
 
 
 ////mouseout---2
@@ -54,12 +56,6 @@ buttons.addEventListener('click', event =>{
 
 window.addEventListener('resize', (event) => alert('Why are you in my swamp?!'));
 
-const images = document.querySelectorAll('img');
-console.log('images', images);
-
-images.forEach((ele) => ele.addEventListener('resize', (event) => {
-    event.target.style.border = '2px solid red';
-}));
 
 ///copy---5
 
@@ -91,4 +87,6 @@ logo.addEventListener('mouseleave', event => {
     event.target.style.fontSize = '';
     event.target.style.color = 'purple';
 })
+
+
 
