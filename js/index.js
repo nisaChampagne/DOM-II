@@ -1,6 +1,6 @@
 // Your code goes here
 
-//mouseover-- 1---nav a
+//mouseover-- 1
 
 const navLinks = document.querySelectorAll('a.nav-link');
 console.log('navLinks', navLinks);
@@ -45,13 +45,15 @@ secondaryHeader.forEach((ele) => ele.addEventListener('mouseover', event =>{
 
 
 ///click---3
-const buttons = document.querySelector('.btn');
+const buttons = document.querySelectorAll('.btn');
 console.log('buttons', buttons);
 
-buttons.addEventListener('click', event =>{
-    buttons.innerHTML = `Click a bunch: ${event.detail}`;
+buttons.forEach((element) => element.addEventListener('click', event =>{
+    buttons.forEach((ele) => ele.innerHTML = `Click a bunch: ${event.detail}`);
     event.target.style.color = 'purple';
-});
+}));
+
+
 
 ///resize---4
 
@@ -65,8 +67,10 @@ document.addEventListener('copy', (event) => alert('God is watching you plagiari
 ///dragstart---6
 document.addEventListener('dragstart', (event) => alert('Why are you moving things now?'));
 
-//dblclick---8
+//dblclick---7
 document.addEventListener('dblclick', (event) => alert('You know you do not have to click twice'));
+
+
 
 
 ///mouse enter --9 and mouse leave--- 10
@@ -84,10 +88,14 @@ logo.addEventListener('mouseenter', event => {
     }, 1000)
 }, false);
 
+logo.addEventListener('mouseenter', event => {
+    event.stopPropagation()
+});
+
+
 logo.addEventListener('mouseleave', event => {
     event.target.style.fontSize = '';
     event.target.style.color = 'purple';
 })
-
 
 
