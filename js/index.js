@@ -70,7 +70,15 @@ document.addEventListener('dragstart', (event) => alert('Why are you moving thin
 //dblclick---7
 document.addEventListener('dblclick', (event) => alert('You know you do not have to click twice'));
 
+///scroll --8
 
+// window.addEventListener('scroll', event => alert('You have scrolled enough'));
+
+const paragraphs = document.querySelectorAll('p');
+document.addEventListener('scroll', function() {
+    let colorchoice = "rgb(" + Math.round(Math.random() * 220) + "," + Math.round(Math.random() * 220) + "," + Math.round(Math.random() * 220) + ")";
+    paragraphs.forEach((para) => para.style.color = colorchoice)
+})
 
 
 ///mouse enter --9 and mouse leave--- 10
